@@ -103,4 +103,4 @@ if month != '' or day !='' or x!=''or y !=''or ffmc !=''or dmc !=''or dc !=''or 
     user_inputs={'month': month,'day':day , 'X': x, 'Y': y,'FFMC': ffmc, 'DMC': dmc, 'DC': dc, 'ISI': isi, 'temp': temp, 'RH': rh, 'wind': wind, 'rain': rain}
     df_user=pd.DataFrame([user_inputs])
     y_pred = model.predict(df_user)
-    st.write("Predicted burned forest area: ", round(y_pred[0],2))
+    st.write("Predicted burned forest area (in ha): ", round(y_pred[0],2))
