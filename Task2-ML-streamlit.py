@@ -48,8 +48,9 @@ rh=''
 wind=''
 rain=''
 
-if month == '' or day =='' or x==''or y ==''or ffmc ==''or dmc ==''or dc ==''or isi ==''or temp ==''or rh ==''or wind ==''or rain=='':
-    #User input
+
+#User input
+try:
     month = float(st.text_input("Enter a month as a number (Jan=1, Feb=2, ...): "))
     day = float(st.text_input("Enter a day as a number (Monday=1, Tuesday=2, ...): "))
     x = float(st.text_input("Enter an X coördinate (1 to 9): "))
@@ -62,6 +63,8 @@ if month == '' or day =='' or x==''or y ==''or ffmc ==''or dmc ==''or dc ==''or 
     rh = float(st.text_input("Enter a RH index from the FWI system (0.0 to 100.0): "))
     wind = float(st.text_input("Enter the wind speed in km/h: "))
     rain = float(st.text_input("Enter the outside rain in mm/m2: "))
+except ValueError:
+    st.error("Fill in all the boxes.")
 
 if month != '' or day !='' or x!=''or y !=''or ffmc !=''or dmc !=''or dc !=''or isi !=''or temp !=''or rh !=''or wind !=''or rain!='':
     user_inputs={'month': month,'day':day , 'X': x, 'Y': y,'FFMC': ffmc, 'DMC': dmc, 'DC': dc, 'ISI': isi, 'temp': temp, 'RH': rh, 'wind': wind, 'rain': rain}
