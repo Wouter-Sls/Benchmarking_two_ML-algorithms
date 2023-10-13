@@ -52,19 +52,52 @@ rain=''
 #User input
 try:
     month = float(st.text_input("Enter a month as a number (Jan=1, Feb=2, ...): "))
+except ValueError:
+    st.error("Value can't be empty.")
+try:
     day = float(st.text_input("Enter a day as a number (Monday=1, Tuesday=2, ...): "))
+except ValueError:
+    st.error("Value can't be empty.")
+try:
     x = float(st.text_input("Enter an X coördinate (1 to 9): "))
+except ValueError:
+    st.error("Value can't be empty.")
+try:
     y = float(st.text_input("Enter an Y coördinate (1 to 9): "))
+except ValueError:
+    st.error("Value can't be empty.")
+try:
     ffmc = float(st.text_input("Enter a FFMC index from the FWI system (0.0 to 101.0): "))
+except ValueError:
+    st.error("Value can't be empty.")
+try:
     dmc = float(st.text_input("Enter a DMC index from the FWI system (0.0 to 200.0): "))
+except ValueError:
+    st.error("Value can't be empty.")
+try:
     dc = float(st.text_input("Enter a DC index from the FWI system (0.0 to 800.0): "))
+except ValueError:
+    st.error("Value can't be empty.")
+try:
     isi = float(st.text_input("Enter a ISI index from the FWI system (0.0 to 60.0): "))
+except ValueError:
+    st.error("Value can't be empty.")
+try:
     temp = float(st.text_input("Enter a temperature in Celsius degrees: 0.0 to 45.0"))
+except ValueError:
+    st.error("Value can't be empty.")
+try:
     rh = float(st.text_input("Enter a RH index from the FWI system (0.0 to 100.0): "))
+except ValueError:
+    st.error("Value can't be empty.")
+try:
     wind = float(st.text_input("Enter the wind speed in km/h: "))
+except ValueError:
+    st.error("Value can't be empty.")
+try:
     rain = float(st.text_input("Enter the outside rain in mm/m2: "))
 except ValueError:
-    st.error("Fill in all the boxes.")
+    st.error("Value can't be empty.")
 
 if month != '' or day !='' or x!=''or y !=''or ffmc !=''or dmc !=''or dc !=''or isi !=''or temp !=''or rh !=''or wind !=''or rain!='':
     user_inputs={'month': month,'day':day , 'X': x, 'Y': y,'FFMC': ffmc, 'DMC': dmc, 'DC': dc, 'ISI': isi, 'temp': temp, 'RH': rh, 'wind': wind, 'rain': rain}
