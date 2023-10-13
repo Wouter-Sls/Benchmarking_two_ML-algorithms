@@ -9,7 +9,7 @@ st.title("Task ML. Benchmarking two ML algorithms") #Show the title of the app o
 st.subheader(':blue[_Created by Wouter Selis_] :male-technologist:', divider='rainbow') #Show a subheader on Streamlit with text in blue, an emoji and a rainbow line under the text
 
 #Import of the forestfires csv file
-df = pd.read_csv('./resources/forestfires.csv')
+df = pd.read_csv('./forestfires.csv')
 
 # Create a dictionary to map month abbreviations to numbers
 month_to_num = {month.lower(): index for index, month in enumerate(calendar.month_abbr) if month}
